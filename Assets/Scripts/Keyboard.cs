@@ -53,8 +53,8 @@ public class Keyboard : MonoBehaviour {
     }
 
     public void KiwiArrivesToKey(int keyCode) {
-        if (keysSprites[keyCode].color == Color.black) {
-            Debug.Log("Dead :S");
+        if (keysSteps[keyCode] == GameSettings.LimitKeyboardSteps) {
+            Kiwi.instance.KiwiIsDead(true);
         } else {
             keysSprites[keyCode].transform.GetChild(0).gameObject.SetActive(true);
             AudioManager.instance.PlayKeySound(KeysInputManager.instance.GetKeyCode(keyCode - 1));

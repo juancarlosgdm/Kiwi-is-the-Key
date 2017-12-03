@@ -6,6 +6,7 @@ public class KeysInputManager : MonoBehaviour {
     /* Singleton */
     public static KeysInputManager instance;
 
+    [HideInInspector]
     public KeysInputConfiguration keysConfig;
 
     private int code;
@@ -27,18 +28,22 @@ public class KeysInputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Update () {
-        int i = 0;
-        code = -1;
-        while (i < keysConfig.keyboardSize) {
-            if (Input.GetKeyDown(keysConfig.keysConfiguration[i].key)) {
-                code = keysConfig.keysConfiguration[i].code;
-                i = keysConfig.keyboardSize;
-            } else {
-                ++i;
+        if (MenuManager.instance.inGame) {
+            int i = 0;
+            code = -1;
+            while (i < keysConfig.keyboardSize) {
+                if (Input.GetKeyDown(keysConfig.keysConfiguration[i].key)) {
+                    code = keysConfig.keysConfiguration[i].code;
+                    i = keysConfig.keyboardSize;
+                } else {
+                    ++i;
+                }
             }
-        }
-        if (code != -1) {
-            Kiwi.instance.MoveTo(code);
+            if (code != -1) {
+                Kiwi.instance.MoveTo(code);
+            }
+        } else if (Input.anyKeyDown) {
+            MenuManager.instance.KeyPressed();
         }
 	}
 

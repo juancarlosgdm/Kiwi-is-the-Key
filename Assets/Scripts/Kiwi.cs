@@ -24,7 +24,11 @@ public class Kiwi : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Dead by collision :S");
+        KiwiIsDead(true);
+    }
+
+    public void KiwiIsDead(bool anim) {
+        MenuManager.instance.GameOver();
     }
 
     public void MoveTo(int keyCode) {

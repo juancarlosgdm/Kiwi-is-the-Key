@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour {
 
     private List<AudioSource> freeAudioSources;
     private AudioSource audioSourceTemplate;
+    private AudioSource menuAudioSource;
+    private AudioSource gameoverAudioSource;
 
     private void Awake() {
         // Singleton
@@ -47,13 +49,19 @@ public class AudioManager : MonoBehaviour {
             Destroy(this);
         }
         // Referencias
-        audioSourceTemplate = transform.GetChild(0).GetComponent<AudioSource>();
+        audioSourceTemplate = transform.Find("AudioSourceTemplate").GetComponent<AudioSource>();
+        menuAudioSource = transform.Find("MenuAudioSource").GetComponent<AudioSource>();
+        gameoverAudioSource = transform.Find("GameOverAudioSource").GetComponent<AudioSource>();
     }
 
     private void Start() {
         freeAudioSources = new List<AudioSource>();
         freeAudioSources.Add(audioSourceTemplate);
         GenerateAudioSourceFromTemplate();
+    }
+
+    public void PlayGameOverMusic() {
+        gameoverAudioSource.Play();
     }
 
     public void PlayKeySound(KeyCode keyCode) {
@@ -140,6 +148,10 @@ public class AudioManager : MonoBehaviour {
                 GetFreeAudioSource().PlayOneShot(SpaceSound);
                 break;
         }
+    }
+
+    public void StopMenuMusic() {
+        menuAudioSource.Stop();
     }
 
     private AudioSource GenerateAudioSourceFromTemplate() {
