@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1524798930593556}
+  m_IsPrefabParent: 1
+--- !u!1 &1524798930593556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4357286371488124}
+  - component: {fileID: 114743339242010294}
+  - component: {fileID: 114772880171185818}
+  m_Layer: 0
+  m_Name: KeysInputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4357286371488124
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524798930593556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114743339242010294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524798930593556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cd7053d0208e5498249c7b3ddc6a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysConfig: {fileID: 0}
+--- !u!114 &114772880171185818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524798930593556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b514c3c0f616c24db76b1a417f6c801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysConfiguration:
+  - key: 113
+    code: 1
+  - key: 119
+    code: 2
+  - key: 101
+    code: 3
+  - key: 114
+    code: 4
+  - key: 116
+    code: 5
+  - key: 121
+    code: 6
+  - key: 117
+    code: 7
+  - key: 105
+    code: 8
+  - key: 111
+    code: 9
+  - key: 112
+    code: 10
+  - key: 97
+    code: 11
+  - key: 115
+    code: 12
+  - key: 100
+    code: 13
+  - key: 102
+    code: 14
+  - key: 103
+    code: 15
+  - key: 104
+    code: 16
+  - key: 106
+    code: 17
+  - key: 107
+    code: 18
+  - key: 108
+    code: 19
+  - key: 122
+    code: 20
+  - key: 120
+    code: 21
+  - key: 99
+    code: 22
+  - key: 118
+    code: 23
+  - key: 98
+    code: 24
+  - key: 110
+    code: 25
+  - key: 109
+    code: 26

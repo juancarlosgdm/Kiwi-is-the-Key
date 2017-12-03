@@ -22,11 +22,11 @@ public class TrapManager : MonoBehaviour {
         if (t == 0) {
             Debug.Log("pinchos");
             // Pinchos
-            ActivateSpikes();
+            //ActivateSpikes();
         } else {
             Debug.Log("bola");
             // Bola que persigue
-            ActivateBall();
+            //ActivateBall();
         }
     }
 

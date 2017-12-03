@@ -7,7 +7,7 @@ public class GameSettings : MonoBehaviour {
     public static GameSettings instance;
     
     public float keyboardCD = 2.0f;
-    public int limitKeyboardSteps = 2;
+    public int limitKeyboardSteps = 3;
 
     private void Awake() {
         // Singleton

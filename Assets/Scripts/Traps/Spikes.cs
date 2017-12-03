@@ -7,7 +7,7 @@ public class Spikes : MonoBehaviour {
 
     private void OnEnable() {
         // Elige posición en la que aparece
-        GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.keysSprites[Random.Range(0, Keyboard.instance.keysSprites.Count)].rectTransform.anchoredPosition;
+        //GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.keysSprites[Random.Range(0, Keyboard.instance.keysSprites.Count)].rectTransform.anchoredPosition;
         // Lanza animación
         // Prepara su desactivación
         Invoke("DeactivateSpikes", spikesLifetime);

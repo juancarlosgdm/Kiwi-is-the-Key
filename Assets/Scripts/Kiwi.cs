@@ -38,7 +38,8 @@ public class Kiwi : MonoBehaviour {
             currentKeyCode = keyCode;
             Keyboard.instance.KiwiArrivesToKey(currentKeyCode);
             TrapManager.instance.ActivateTrap();
-            GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.GetKeyPosition(currentKeyCode).anchoredPosition;
+            transform.position = Keyboard.instance.GetKeyPosition(currentKeyCode);
+            //GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.GetKeyPosition(currentKeyCode).anchoredPosition;
         }
     }
 

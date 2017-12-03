@@ -7,7 +7,8 @@ public class Keyboard : MonoBehaviour {
     /* Singleton */
     public static Keyboard instance;
 
-    public List<Image> keysSprites;
+    public List<SpriteRenderer> keysSprites;
+    public List<SpriteRenderer> pressedKeysSprites;
 
     private List<int> keysSteps;
 
@@ -28,19 +29,23 @@ public class Keyboard : MonoBehaviour {
     }
 
     public void FreeBannedKey(int keyCode) {
-        keysSprites[keyCode].color = Color.white;
+        keysSprites[keyCode].transform.GetChild(0).gameObject.SetActive(false);
     }
 
-    public RectTransform GetKeyPosition(int keyCode) {
-        return keysSprites[keyCode].GetComponent<RectTransform>();
+    public Vector3 GetKeyPosition(int keyCode) {
+        return keysSprites[keyCode].transform.position;
     }
 
     public bool KiwiLeavesKey(int keyCode) {
         bool res = true;
-        keysSprites[keyCode].color = Color.gray;
+        //keysSprites[keyCode].color = Color.gray;
         if (++keysSteps[keyCode] == GameSettings.LimitKeyboardSteps) {
-            keysSprites[keyCode].color = Color.black;
+            keysSprites[keyCode].transform.GetChild(0).gameObject.SetActive(false);
+            keysSprites[keyCode].transform.GetChild(GameSettings.LimitKeyboardSteps).gameObject.SetActive(true);
             res = false;
+        } else {
+            keysSprites[keyCode].transform.GetChild(keysSteps[keyCode]).gameObject.SetActive(true);
+            keysSprites[keyCode].transform.GetChild(0).GetChild(keysSteps[keyCode]-1).gameObject.SetActive(true);
         }
         //Debug.Log(keysSteps[keyCode]);
 
@@ -51,7 +56,7 @@ public class Keyboard : MonoBehaviour {
         if (keysSprites[keyCode].color == Color.black) {
             Debug.Log("Dead :S");
         } else {
-            keysSprites[keyCode].color = Color.green;
+            keysSprites[keyCode].transform.GetChild(0).gameObject.SetActive(true);
             AudioManager.instance.PlayKeySound(KeysInputManager.instance.GetKeyCode(keyCode - 1));
         }
     }
