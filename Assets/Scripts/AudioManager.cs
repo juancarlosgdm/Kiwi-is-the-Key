@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour {
     private List<AudioSource> freeAudioSources;
     private AudioSource audioSourceTemplate;
     private AudioSource menuAudioSource;
+	private AudioSource ingameAudioSource;
     private AudioSource gameoverAudioSource;
 
     private void Awake() {
@@ -51,6 +52,7 @@ public class AudioManager : MonoBehaviour {
         // Referencias
         audioSourceTemplate = transform.Find("AudioSourceTemplate").GetComponent<AudioSource>();
         menuAudioSource = transform.Find("MenuAudioSource").GetComponent<AudioSource>();
+		ingameAudioSource = transform.Find("IngameAudioSource").GetComponent<AudioSource>();
         gameoverAudioSource = transform.Find("GameOverAudioSource").GetComponent<AudioSource>();
     }
 
@@ -61,6 +63,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void PlayGameOverMusic() {
+		ingameAudioSource.Stop();
         gameoverAudioSource.Play();
     }
 
@@ -152,6 +155,7 @@ public class AudioManager : MonoBehaviour {
 
     public void StopMenuMusic() {
         menuAudioSource.Stop();
+		ingameAudioSource.Play();
     }
 
     private AudioSource GenerateAudioSourceFromTemplate() {
