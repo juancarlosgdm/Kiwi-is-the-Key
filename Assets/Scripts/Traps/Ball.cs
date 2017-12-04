@@ -18,8 +18,23 @@ public class Ball : MonoBehaviour {
     }
 
     private void OnEnable() {
-        // Elige posición en la que aparece
-        switch (Random.Range(0, 3)) {
+        // Elige si obliga al jugador a moverse
+        int pos = 0;
+        if (Random.Range(0.0f, 1.0f) <= GameSettings.KillingBoulderProb) {
+            // Línea del Kiwi
+            if (Kiwi.instance.transform.position.y == 0.545f) {
+                pos = 0;
+            } else if (Kiwi.instance.transform.position.y == -0.015f) {
+                pos = 1;
+            } else {
+                pos = 2;
+            }
+        } else {
+            // Posición aleatoria
+            pos = Random.Range(0, 3);
+        }
+        // Elige la posición
+        switch (pos) {
             case 0:
                 transform.position = new Vector3(posXStart, posYLine1, 0);
                 spriteRenderer.sortingOrder = 12;

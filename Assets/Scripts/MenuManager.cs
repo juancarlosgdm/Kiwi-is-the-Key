@@ -16,6 +16,8 @@ public class MenuManager : MonoBehaviour {
     [HideInInspector]
     public bool inGame = false;
 
+    private float gameoverTime;
+
     private void Awake() {
         // Singleton
         if (instance == null) {
@@ -27,8 +29,11 @@ public class MenuManager : MonoBehaviour {
 
     public void GameOver() {
         inGame = false;
+        gameoverTime = 0.0f;
+        Invoke("UpdateGameoverTime", 1.5f);
         gameoverMenu.SetActive(true);
         AudioManager.instance.PlayGameOverMusic();
+        TimeCounter.instance.ShowTimeWithSpritesGameover();
     }
 
     public void KeyPressed() {
@@ -38,7 +43,7 @@ public class MenuManager : MonoBehaviour {
             Invoke("StartGame", tutorialTime);
         } else if (tutorialMenu.activeSelf) {
             StartGame();
-        } else {
+        } else if (gameoverTime > 0.0f) {
             SceneManager.LoadScene(0);
         }
     }
@@ -51,5 +56,9 @@ public class MenuManager : MonoBehaviour {
             TrapManager.instance.GameStarted();
             TimeCounter.instance.GameStarted();
         }
+    }
+
+    private void UpdateGameoverTime() {
+        gameoverTime = 1.5f;
     }
 }

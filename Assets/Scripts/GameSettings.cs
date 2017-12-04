@@ -21,6 +21,10 @@ public class GameSettings : MonoBehaviour {
     [Range(0.0f, 1.0f)]
     public float trapActionProb = 0.2f;
 
+    [Header("Other Traps Settings")]
+    [Range(0.0f, 1.0f)]
+    public float killingBoulderProb = 0.2f;
+
     private void Awake() {
         // Singleton
         if (instance == null) {
@@ -81,6 +85,14 @@ public class GameSettings : MonoBehaviour {
     public static float TrapActionProb {
         get {
             return instance.trapActionProb;
+        }
+    }
+
+    /* Other Traps Settings */
+
+    public static float KillingBoulderProb {
+        get {
+            return instance.killingBoulderProb;
         }
     }
 

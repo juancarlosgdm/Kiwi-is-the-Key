@@ -7,6 +7,7 @@ public class TimeCounter : MonoBehaviour {
     public static TimeCounter instance;
 
     public List<SpriteRenderer> ingamePositionSprites;
+    public List<SpriteRenderer> gameoverPositionSprites;
     public List<Sprite> numberSprites;
 
     private float time;
@@ -26,8 +27,10 @@ public class TimeCounter : MonoBehaviour {
     }
 
     private void UpdateTime() {
-        time += 1.0f;
-        ShowTimeWithSpritesInGame();
+        if (MenuManager.instance.inGame) {
+            time += 1.0f;
+            ShowTimeWithSpritesInGame();
+        }
     }
 
     private void ShowTimeWithSpritesInGame() {
@@ -39,5 +42,16 @@ public class TimeCounter : MonoBehaviour {
         ingamePositionSprites[2].sprite = numberSprites[Mathf.FloorToInt(time % 60) / 10];
         // Segundos (unidades)
         ingamePositionSprites[3].sprite = numberSprites[Mathf.FloorToInt(time % 60) % 10];
+    }
+
+    public void ShowTimeWithSpritesGameover() {
+        // Minutos (decenas)
+        gameoverPositionSprites[0].sprite = numberSprites[Mathf.FloorToInt(time / 60) / 10];
+        // Minutos (unidades)
+        gameoverPositionSprites[1].sprite = numberSprites[Mathf.FloorToInt(time / 60) % 10];
+        // Segundos (decenas)
+        gameoverPositionSprites[2].sprite = numberSprites[Mathf.FloorToInt(time % 60) / 10];
+        // Segundos (unidades)
+        gameoverPositionSprites[3].sprite = numberSprites[Mathf.FloorToInt(time % 60) % 10];
     }
 }

@@ -43,7 +43,17 @@ public class TrapManager : MonoBehaviour {
             --maxTries;
         }
         if (!spikesList[i].activeSelf) {
-            spikesList[i].SetActive(true);
+            // Aviso al kiwi
+            Kiwi.instance.CalculateAlert(spikesList[i].transform.position);
+            // Activación de los pinchos
+            StartCoroutine("StartSpikes", spikesList[i]);
+        }
+    }
+
+    private IEnumerator StartSpikes(GameObject spikes) {
+        yield return new WaitForSeconds(1.5f);
+        if (!spikes.activeSelf) {
+            spikes.SetActive(true);
         }
     }
 

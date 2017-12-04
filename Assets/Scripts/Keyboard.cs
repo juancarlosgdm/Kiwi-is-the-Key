@@ -41,7 +41,7 @@ public class Keyboard : MonoBehaviour {
         //keysSprites[keyCode].color = Color.gray;
         if (++keysSteps[keyCode] == GameSettings.LimitKeyboardSteps) {
             keysSprites[keyCode].transform.GetChild(0).gameObject.SetActive(false);
-            keysSprites[keyCode].transform.GetChild(GameSettings.LimitKeyboardSteps).gameObject.SetActive(true);
+            keysSprites[keyCode].transform.GetChild(4).gameObject.SetActive(true);
             res = false;
         } else {
             keysSprites[keyCode].transform.GetChild(keysSteps[keyCode]).gameObject.SetActive(true);

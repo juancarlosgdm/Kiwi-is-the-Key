@@ -6,9 +6,12 @@ public class Kiwi : MonoBehaviour {
     /* Singleton */
     public static Kiwi instance;
 
+    public SpriteRenderer alertSprite;
+
     private int currentKeyCode;
     private List<int> bannedKeys;
     private bool dead;
+    private int alert;
 
     private void Awake() {
         // Singleton
@@ -23,6 +26,7 @@ public class Kiwi : MonoBehaviour {
         currentKeyCode = -1;
         bannedKeys = new List<int>();
         dead = false;
+        alert = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -31,8 +35,15 @@ public class Kiwi : MonoBehaviour {
         }
     }
 
+    public void CalculateAlert(Vector3 spikesPosition) {
+        if (transform.position.Equals(spikesPosition)) {
+            alertSprite.gameObject.SetActive(true);
+        }
+    }
+
     public void KiwiIsDead(bool anim) {
         dead = true;
+        alertSprite.gameObject.SetActive(false);
         MenuManager.instance.GameOver();
         if (anim) {
             GetComponent<Animator>().SetTrigger("Fall");
@@ -56,6 +67,7 @@ public class Kiwi : MonoBehaviour {
                 TrapManager.instance.ActivateTrap();
             }
             transform.position = Keyboard.instance.GetKeyPosition(currentKeyCode);
+            alertSprite.gameObject.SetActive(false);
             //GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.GetKeyPosition(currentKeyCode).anchoredPosition;
         }
     }
@@ -65,5 +77,4 @@ public class Kiwi : MonoBehaviour {
         bannedKeys.Remove(keyCode);
         Keyboard.instance.FreeBannedKey(keyCode);
     }
-
 }
