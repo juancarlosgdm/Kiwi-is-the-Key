@@ -171,7 +171,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243996503254141516, guid: b16b2ac7748649942aa0a17cc2e98ac1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a51d35603d87494ca4d12c8cc5416b7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -228,7 +228,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -499,26 +499,26 @@ MonoBehaviour:
   BSound: {fileID: 8300000, guid: b2a0ef0dc77bdf449ac8eb36405ff43a, type: 3}
   CSound: {fileID: 8300000, guid: 54a269602dccdb641869d97de4ac7773, type: 3}
   DSound: {fileID: 8300000, guid: 0b7d73ec08393d14aa7361f7b7b9ffeb, type: 3}
-  ESound: {fileID: 8300000, guid: c630ef8b9b536b743acd14eb8112b30b, type: 3}
+  ESound: {fileID: 8300000, guid: ab50f7239b22c434cb923bcd1aaf935a, type: 3}
   FSound: {fileID: 8300000, guid: c2b40718fd718374bb521d6b9b58d571, type: 3}
   GSound: {fileID: 8300000, guid: 50348b30713a5b841a469952ef39d1b1, type: 3}
   HSound: {fileID: 8300000, guid: 6fe9da10208c9a24ba41c597481b1260, type: 3}
-  ISound: {fileID: 8300000, guid: 0cc26e3429c6f4a428ea0f8d415e90f6, type: 3}
+  ISound: {fileID: 8300000, guid: 23764996f69972b4991d4d82bb091f5e, type: 3}
   JSound: {fileID: 8300000, guid: 2b9ac967af33b594e805b2fc05e0b35e, type: 3}
   KSound: {fileID: 8300000, guid: 7830a719f73fe1f4fb542d3420938909, type: 3}
   LSound: {fileID: 8300000, guid: 0cb1a77b8d454954381ddd5c56fd43c6, type: 3}
   MSound: {fileID: 8300000, guid: 16ac4205e2370204198639604294ca89, type: 3}
   NSound: {fileID: 8300000, guid: fe49065687a96544e8bf2722700a67e2, type: 3}
-  OSound: {fileID: 8300000, guid: ef53c99cae531ce4e870dd91f40f7c52, type: 3}
-  PSound: {fileID: 8300000, guid: a80c28e495ed4c942a019e3d669b6000, type: 3}
-  QSound: {fileID: 8300000, guid: 490b5cba8b7ff5045a8515426f144d23, type: 3}
-  RSound: {fileID: 8300000, guid: 0ee618d379788d542a6f5d3b53021d6f, type: 3}
+  OSound: {fileID: 8300000, guid: d0f88d3cf4623f445835e6fe8fed5793, type: 3}
+  PSound: {fileID: 8300000, guid: 646de320774be1047be1f1eb761be5ac, type: 3}
+  QSound: {fileID: 8300000, guid: dd523ed405021744fa894e098ee3a684, type: 3}
+  RSound: {fileID: 8300000, guid: 17e656acc869d124bac8feafb00d2743, type: 3}
   SSound: {fileID: 8300000, guid: d2989ce80ce49d64995bc3165224ed3f, type: 3}
-  TSound: {fileID: 8300000, guid: 8ea38fe6268be1f4890b268089784438, type: 3}
-  USound: {fileID: 8300000, guid: c180e04f2a0ce7645b1c270e019ca590, type: 3}
+  TSound: {fileID: 8300000, guid: f382fc11a45e9034880c4e5959cd715f, type: 3}
+  USound: {fileID: 8300000, guid: db3abec1db551984daa134208d48ec7b, type: 3}
   VSound: {fileID: 8300000, guid: e66b47ef8908bd940adcfa5792381c0d, type: 3}
-  WSound: {fileID: 8300000, guid: 77b69eab35363964ea345e11f03a99e9, type: 3}
+  WSound: {fileID: 8300000, guid: 3103a2a46f6f53346827589e1114f514, type: 3}
   XSound: {fileID: 8300000, guid: ea992151c140d0d49907481e07faea0d, type: 3}
-  YSound: {fileID: 8300000, guid: 5c4acbf5f17487e4596df7d22230df44, type: 3}
+  YSound: {fileID: 8300000, guid: 012ad54f98f362e4da6f753aa77000aa, type: 3}
   ZSound: {fileID: 8300000, guid: f39fea61589a8b8449dcc37deb356ea6, type: 3}
   SpaceSound: {fileID: 0}
