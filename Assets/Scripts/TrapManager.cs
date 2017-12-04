@@ -20,9 +20,13 @@ public class TrapManager : MonoBehaviour {
         }
     }
 
+    public void GameStarted() {
+        InvokeRepeating("ActivateTrap", GameSettings.TrapFrequency, GameSettings.TrapFrequency);
+    }
+
     public void ActivateTrap() {
-        int t = Random.Range(0, 2);
-        if (t == 0) {
+        int t = Random.Range(0, GameSettings.BoulderProbKey + GameSettings.SpikesProbKey);
+        if (t < GameSettings.SpikesProbKey) {
             Debug.Log("pinchos");
             // Pinchos
             ActivateSpikes();

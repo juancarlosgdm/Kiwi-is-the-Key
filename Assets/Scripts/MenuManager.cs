@@ -33,6 +33,7 @@ public class MenuManager : MonoBehaviour {
             inGame = true;
             startMenu.SetActive(false);
             AudioManager.instance.StopMenuMusic();
+            TrapManager.instance.GameStarted();
         } else {
             SceneManager.LoadScene(0);
         }

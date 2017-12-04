@@ -52,4 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardCD: 2
-  limitKeyboardSteps: 2
+  limitKeyboardSteps: 3
+  spikesProbRandom: 1
+  boulderProbRandom: 1
+  trapFrequency: 1
+  spikesProbKey: 1
+  boulderProbKey: 1

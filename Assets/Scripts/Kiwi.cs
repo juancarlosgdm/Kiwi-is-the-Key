@@ -8,6 +8,7 @@ public class Kiwi : MonoBehaviour {
 
     private int currentKeyCode;
     private List<int> bannedKeys;
+    private bool dead;
 
     private void Awake() {
         // Singleton
@@ -21,14 +22,23 @@ public class Kiwi : MonoBehaviour {
     private void Start() {
         currentKeyCode = -1;
         bannedKeys = new List<int>();
+        dead = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        KiwiIsDead(true);
+        if (!dead) {
+            KiwiIsDead(false);
+        }
     }
 
     public void KiwiIsDead(bool anim) {
+        dead = true;
         MenuManager.instance.GameOver();
+        if (anim) {
+            GetComponent<Animator>().SetTrigger("Fall");
+        } else {
+            GetComponent<Animator>().SetTrigger("Dead");
+        }
     }
 
     public void MoveTo(int keyCode) {

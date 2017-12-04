@@ -296,7 +296,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 47126201}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 99561ae70a9d26a4ca7fb39c0c0dc164, type: 2}
   m_CullingMode: 0
@@ -1724,6 +1724,7 @@ GameObject:
   - component: {fileID: 238683604}
   - component: {fileID: 238683603}
   - component: {fileID: 238683602}
+  - component: {fileID: 238683606}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1765,7 +1766,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.8
+  orthographic size: 2.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1793,6 +1794,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &238683606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 238683601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c398f41367c719b42909420cfedc4e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &242468497
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,11 +17210,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4210811462880472, guid: 7105e4faee335a54ab66f8b8a4c2eeed, type: 2}
       propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114675106870521164, guid: 7105e4faee335a54ab66f8b8a4c2eeed,
-        type: 2}
-      propertyPath: limitKeyboardSteps
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
