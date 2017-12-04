@@ -42,6 +42,8 @@ public class KeysInputManager : MonoBehaviour {
             if (code != -1) {
                 Kiwi.instance.MoveTo(code);
             }
+        } else if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
         } else if (Input.anyKeyDown) {
             MenuManager.instance.KeyPressed();
         }

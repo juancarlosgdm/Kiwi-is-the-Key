@@ -51,7 +51,10 @@ public class Kiwi : MonoBehaviour {
             }
             currentKeyCode = keyCode;
             Keyboard.instance.KiwiArrivesToKey(currentKeyCode);
-            TrapManager.instance.ActivateTrap();
+            // Activa una trampa, si procede
+            if (Random.Range(0.0f, 1.0f) <= GameSettings.TrapActionProb) {
+                TrapManager.instance.ActivateTrap();
+            }
             transform.position = Keyboard.instance.GetKeyPosition(currentKeyCode);
             //GetComponent<RectTransform>().anchoredPosition = Keyboard.instance.GetKeyPosition(currentKeyCode).anchoredPosition;
         }

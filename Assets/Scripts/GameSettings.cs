@@ -13,11 +13,13 @@ public class GameSettings : MonoBehaviour {
     [Header("Random Traps Settings")]
     public int spikesProbRandom = 1;
     public int boulderProbRandom = 1;
-    public float trapFrequency = 1.0f;
+    public float trapFrequencySeconds = 1.0f;
 
     [Header("Key Traps Settings")]
     public int spikesProbKey = 1;
     public int boulderProbKey = 1;
+    [Range(0.0f, 1.0f)]
+    public float trapActionProb = 0.2f;
 
     private void Awake() {
         // Singleton
@@ -58,7 +60,7 @@ public class GameSettings : MonoBehaviour {
 
     public static float TrapFrequency {
         get {
-            return instance.trapFrequency;
+            return instance.trapFrequencySeconds;
         }
     }
 
@@ -73,6 +75,12 @@ public class GameSettings : MonoBehaviour {
     public static int BoulderProbKey {
         get {
             return instance.boulderProbKey;
+        }
+    }
+
+    public static float TrapActionProb {
+        get {
+            return instance.trapActionProb;
         }
     }
 

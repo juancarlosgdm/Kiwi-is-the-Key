@@ -8,7 +8,10 @@ public class MenuManager : MonoBehaviour {
     public static MenuManager instance;
 
     public GameObject startMenu;
+    public GameObject tutorialMenu;
     public GameObject gameoverMenu;
+    [Space]
+    public float tutorialTime = 2.0f;
 
     [HideInInspector]
     public bool inGame = false;
@@ -30,12 +33,23 @@ public class MenuManager : MonoBehaviour {
 
     public void KeyPressed() {
         if (startMenu.activeSelf) {
-            inGame = true;
             startMenu.SetActive(false);
-            AudioManager.instance.StopMenuMusic();
-            TrapManager.instance.GameStarted();
+            tutorialMenu.SetActive(true);
+            Invoke("StartGame", tutorialTime);
+        } else if (tutorialMenu.activeSelf) {
+            StartGame();
         } else {
             SceneManager.LoadScene(0);
+        }
+    }
+
+    private void StartGame() {
+        if (!inGame) {
+            inGame = true;
+            tutorialMenu.SetActive(false);
+            AudioManager.instance.StopMenuMusic();
+            TrapManager.instance.GameStarted();
+            TimeCounter.instance.GameStarted();
         }
     }
 }
